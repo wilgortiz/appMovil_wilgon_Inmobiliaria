@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_ubicacion">
+
+    <fragment
+        android:id="@+id/nav_ubicacion"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.ubicacion.UbicacionFragment"
+        android:label="@string/menu_ubicacion"
+        tools:layout="@layout/fragment_ubicacion" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.perfil.PerfilFragment"
+        android:label="@string/menu_perfil"
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_nav_perfil_to_cambiarClaveFragment"
+            app:destination="@id/cambiarClaveFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cambiarClaveFragment"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.perfil.CambiarClaveFragment"
+        android:label="Cambiar Clave"
+        tools:layout="@layout/fragment_cambiar_clave" >
+        <action
+            android:id="@+id/action_cambiarClaveFragment_to_nav_perfil"
+            app:destination="@id/nav_perfil" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/nav_inmuebles"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.inmuebles.InmueblesFragment"
+        android:label="@string/menu_inmuebles"
+        tools:layout="@layout/fragment_inmuebles">
+        <action
+            android:id="@+id/action_nav_inmuebles_to_inmuebleFragment"
+            app:destination="@id/inmuebleFragment" />
+        <action
+            android:id="@+id/action_nav_inmuebles_to_nuevoInmuebleFragment"
+            app:destination="@id/nuevoInmuebleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inmuebleFragment"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.inmuebles.InmuebleFragment"
+        android:label="@string/menu_inmuebles"
+        tools:layout="@layout/fragment_inmueble">
+        <action
+            android:id="@+id/action_inmuebleFragment_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nuevoInmuebleFragment"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.inmuebles.NuevoInmuebleFragment"
+        android:label="@string/menu_inmuebles"
+        tools:layout="@layout/fragment_nuevo_inmueble">
+        <action
+            android:id="@+id/action_nuevoInmuebleFragment_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+    </fragment>
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/nav_inquilinos"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.inquilinos.InquilinosFragment"
+        android:label="@string/menu_inquilinos"
+        tools:layout="@layout/fragment_inquilinos" >
+        <action
+            android:id="@+id/action_nav_inquilinos_to_inquilinoFragment"
+            app:destination="@id/inquilinoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inquilinoFragment"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.inquilinos.InquilinoFragment"
+        android:label="@string/detalleInquilinos"
+        tools:layout="@layout/fragment_inquilino" >
+        <action
+            android:id="@+id/action_inquilinoFragment_to_nav_inquilinos"
+            app:destination="@id/nav_inquilinos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_contratos"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.contratos.ContratosFragment"
+        android:label="@string/contratosVigentes"
+        tools:layout="@layout/fragment_contratos" >
+        <action
+            android:id="@+id/action_nav_contratos_to_contratoFragment"
+            app:destination="@id/contratoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contratoFragment"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.contratos.ContratoFragment"
+        android:label="@string/detalleContrato"
+        tools:layout="@layout/fragment_contrato" >
+        <action
+            android:id="@+id/action_contratoFragment_to_nav_contratos"
+            app:destination="@id/nav_contratos" />
+        <action
+            android:id="@+id/action_contratoFragment_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.contratos.PagosFragment"
+        android:label="@string/pagos"
+        tools:layout="@layout/fragment_pagos" >
+        <action
+            android:id="@+id/action_pagosFragment_to_contratoFragment"
+            app:destination="@id/contratoFragment" />
+    </fragment>
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.wilgon.appinmobiliariawilgon.ui.salir.SalirFragment"
+        android:label="@string/menu_salir"
+        tools:layout="@layout/fragment_salir" />
+</navigation>
