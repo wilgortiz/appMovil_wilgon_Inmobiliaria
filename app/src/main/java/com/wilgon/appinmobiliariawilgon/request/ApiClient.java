@@ -39,7 +39,8 @@ public class ApiClient {
     //public static final String URLBASE = "http://192.168.0.6:5000/";
 
     //pc escritorio con wifi
-    public static final String URLBASE = "http://192.168.1.107:5000/";
+    //public static final String URLBASE = "http://192.168.1.107:5000/";
+    public static final String URLBASE = "http://192.168.1.104:5000/";
     private static MisEndpoints mep;
 
 
@@ -64,7 +65,11 @@ public class ApiClient {
         @GET("Propietarios/Perfil")
         Call<Propietario> obtenerPerfil(@Header("Authorization") String token);
 
-        @PUT("Propietarios/Editar")
+        //@PUT("Propietarios/Editar")
+        //Call<Propietario> editarPerfil(@Header("Authorization") String token, @Body Propietario propietario);
+
+
+        @PUT("Propietarios/EditarPerfil")
         Call<Propietario> editarPerfil(@Header("Authorization") String token, @Body Propietario propietario);
 
 
